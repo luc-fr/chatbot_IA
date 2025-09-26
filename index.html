@@ -29,19 +29,20 @@
 
         function ChatMessage({message, sender}) {
 
-            if (sender === 'robot') {
-                return (
-                    <div>
-                        <img src="./assets/chat.png" width="50" />
-                        {message}
-                    </div>
-                )
-            }
+            // if (sender === 'robot') {
+            //     return (
+            //         <div>
+            //             <img src="./assets/chat.png" width="50" />
+            //             {message}
+            //         </div>
+            //     )
+            // }
 
             return (
                 <div>
+                    {sender === 'robot' && <img src="./assets/robot.png" width="50"/>}
                     {message}
-                    <img src="./assets/user.png" width="50" />
+                    {sender === 'user' && <img src="./assets/user.png" width="50"/>}
                 </div>
             )
         }
@@ -50,7 +51,7 @@
             return (
                 <>
                     <ChatInput />
-                    <ChatMessage message="Hello!" />
+                    <ChatMessage message="Hello!" sender="user" />
                     <ChatMessage message="Hello! How can I help you?" sender="robot" />
                     <ChatMessage message="Get date today!" sender="user" />
                     <ChatMessage message="Today is September 25" sender="robot" />
