@@ -1,0 +1,34 @@
+<!-- <body>
+
+    <main id="container"></main>
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        function Title() {
+            return <h1>Hello React!</h1>
+        }
+        function Paragraph() {
+            return <p>Welcome to complete React course!</p>
+        }
+
+        function App() {
+            return (
+                <>
+                    <Title />
+                    <Paragraph />
+                </>
+            )
+        }
+
+        const container = document.querySelector('#container')
+        const root = ReactDOM.createRoot(container)
+        root.render(<App />)
+
+    </script>
+
+</body> -->
