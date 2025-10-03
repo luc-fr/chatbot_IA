@@ -31,6 +31,7 @@
     <script type="text/babel">
 
         function ChatInput() {
+
             return (
                 <div>
                     <input
@@ -68,11 +69,6 @@
         }
 
         function ChatMessages() {
-            
-        }
-
-        function App() {
-
             const chatMessages = [
                 {
                     message: 'Hello!',
@@ -93,23 +89,41 @@
                 }
             ]
 
-            const chatMessagesComponents = chatMessages.map(chatMessage => {
-                return (
-                    <ChatMessage
-                        message={chatMessage.message}
-                        sender={chatMessage.sender}
-                        key={chatMessage.id}
-                    />     
-                )
-            })
+            function sendMessage() {
+                chatMessages.push({
+                    message: 'Testing!',
+                    sender: 'user',
+                    id: crypto.randomUUID()
+                })
+
+                console.log(chatMessages)
+            }
 
             return (
                 <>
-                    <ChatInput />
-                    {chatMessagesComponents}
+                    <button onClick={sendMessage} >Send Message</button>
+                    {chatMessages.map(chatMessage => {
+                        return (
+                            <ChatMessage
+                                message={chatMessage.message}
+                                sender={chatMessage.sender}
+                                key={chatMessage.id}
+                            />
+                        )
+                    })}
                 </>
             )
         }
+
+            function App() {
+
+                return (
+                    <>
+                        <ChatInput />
+                        <ChatMessages />
+                    </>
+                )
+            }
 
         const container = document.querySelector('#container')
         ReactDOM.createRoot(container).render(<App />)
